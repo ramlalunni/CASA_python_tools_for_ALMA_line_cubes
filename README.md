@@ -32,7 +32,6 @@ Uses CASA.specflux() to extract and write out flux densities from two circular a
 
 Plots 5x5 tiled channel maps (**NOTE**: *cube should have atleast 12 channels on either side of central (systemic velocity) channel in case of 5x5*). Each plotted channel will also have a single contour (of user specified sigma level) overplotted on it. Region (default: 25 arcseconds) to plot, number and arrangement of tiles (default: 25, 5x5), etc. are easily customisable.
 
-
 <img width="774" alt="Screenshot 2021-12-02 at 17 25 07" src="https://user-images.githubusercontent.com/87668393/144462006-b5e8a2be-25f1-4883-ad8b-fe190df4cf4e.png">
 
 ## 3. Generate and Plot Moment Maps
