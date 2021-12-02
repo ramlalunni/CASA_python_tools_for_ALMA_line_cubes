@@ -46,6 +46,10 @@ Moment 0             |  Moment 8
 
 Azimuthally Averaged Radial Profiles provide a circularly averaged radial intensity distribution of the image. There is currently no direct CASA task that implements the same. These can be used to determine the extents of the emission morphology in the case of cricumstellar envelopes or other spherical, disk or ring like emitting regions.
 
-This is a simplified and slightly modified version of the [*radialprofile.py*](https://github.com/keflavich/image_tools/blob/793e93065afe2754a818da8b58f9b222a3acf59f/image_tools/radialprofile.py) script by [Adam Ginsburg](https://github.com/keflavich). Refer to it for more advanced functionality (weighting, masking, etc.).
+This is a simplified and slightly modified version of the [*radialprofile.py*](https://github.com/keflavich/image_tools/blob/793e93065afe2754a818da8b58f9b222a3acf59f/image_tools/radialprofile.py) script by [Adam Ginsburg](https://github.com/keflavich). The original [*radialprofile.py*](https://github.com/keflavich/image_tools/blob/793e93065afe2754a818da8b58f9b222a3acf59f/image_tools/radialprofile.py) has more advanced functionality (weighting, masking, etc.). It must be attributed in all reproductions.
 
 <img width="737" alt="Screenshot 2021-12-02 at 18 06 41" src="https://user-images.githubusercontent.com/87668393/144469214-aac4aae0-c83b-4c4f-813c-ad83628c47fa.png">
+
+## Licensing
+
+All scripts provided here are licensed under the **GNU General Public License v3.0**, except where code is explicitely mentioned to be adapted/taken from other sources, in which case the respective source licenses continue to apply. The GNU General Public License is free and copyleft. THE PROGRAMS ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
