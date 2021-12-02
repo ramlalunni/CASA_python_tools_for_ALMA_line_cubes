@@ -23,7 +23,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import os
 
-from modify_plot_axes import align_yaxis_origins
+from modifier_functions import align_yaxis_origins
 
 # function to extract and plot line spectra from image cubes
 ###----------------------------------------------------------------------------###
