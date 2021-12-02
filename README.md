@@ -50,6 +50,19 @@ This is a simplified and slightly modified version of the [*radialprofile.py*](h
 
 <img width="737" alt="Screenshot 2021-12-02 at 18 06 41" src="https://user-images.githubusercontent.com/87668393/144469214-aac4aae0-c83b-4c4f-813c-ad83628c47fa.png">
 
+## Directory Structure
+
+The script which would call these functions has to be located in the same directory (./) as the FITS image cubes. Running all the above four functions would create the following directories, the contents of which are exactly what their names suggest:
+- ./ascii_spectra/
+- ./pdf_spectra/
+- ./channel_maps/
+- ./fits_moment_0_maps/
+- ./fits_moment_8_maps/
+- ./pdf_moment_0_maps/
+- ./pdf_moment_8_maps/
+- ./ascii_az_av_radial_profiles/
+- ./pdf_az_av_radial_profiles/
+
 ## Licensing
 
 All scripts provided here are licensed under the [**GNU General Public License v3.0**](https://www.gnu.org/licenses/gpl-3.0.en.html), except where code is explicitely mentioned to be adapted/taken from other sources, in which case the respective source licenses continue to apply. The GNU General Public License is free and copyleft. THE PROGRAMS ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
