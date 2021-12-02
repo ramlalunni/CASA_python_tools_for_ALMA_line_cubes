@@ -51,7 +51,7 @@ def make_moment_maps(cube, phasecenter, v_sys, v_exp, moment):
     logfile = cube[:-5]+'.chan_vel_list.txt'
     specflux(imagename=cube, region='circle[[%s, %s], 1pix]' %(phasecenter[6:22],phasecenter[23:]), function='flux density', unit='km/s', logfile=logfile, overwrite=True)
     vels = np.genfromtxt('cube[:-4]+'chan_vel_list.txt', skip_header=4, usecols=[3])
-    os.system("rm -rf '%s'" %logfile)                     
+    os.system("rm -rf '%s'" %logfile)
 
     # calculating channel numbers corresponding to v_sys +/- 1.2*v_exp (20% extra on both sides)
     plus_v_exp_chan  = np.argmin(np.abs(vels-(v_sys+1.2*v_exp)))
