@@ -1,4 +1,4 @@
-# moment_mapper.py
+# moment_map_plotter.py
 
 ########################################################################
 # Copyright (C) 2021  Ramlal Unnikrishnan
