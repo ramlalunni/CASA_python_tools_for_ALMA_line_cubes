@@ -1,5 +1,5 @@
 # CASA_python_tools_for_ALMA_cubes
-*Common Astronomy Software Applications ([CASA](https://casa.nrao.edu))* python scripts for visualizing interferometric ALMA spectral line cubes in various ways: channel maps, radial profiles, flux density spectra, moment maps, etc. Useful to loop through in case of spectral survey observations with hundreds of lines. IN case of observations of a single of very few lines, some of these tasks can be performed manually via the associated CASA GUI.
+*Common Astronomy Software Applications ([CASA](https://casa.nrao.edu))* python scripts for visualizing interferometric ALMA spectral line cubes in various ways: channel maps, radial profiles, flux density spectra, moment maps, etc. Useful to loop through in case of spectral survey observations with hundreds of lines. In case of observations of a single line, or very few lines, some of these tasks can be easily performed manually via the associated CASA GUI.
 
 **NOTE**: Can be run only from within a CASA terminal, and not from standalone Python or IPython consoles.
 
