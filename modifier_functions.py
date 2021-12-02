@@ -1,4 +1,3 @@
-
 # modifier_functions.py
 
 ########################################################################
@@ -101,4 +100,11 @@ def align_yaxis_origins(axes):
 
     # set axes limits
     [axes[i].set_ylim(*extrema[i]) for i in range(len(extrema))]
+###----------------------------------------------------------------------------###
+
+
+# function to truncate decimal numbers without rounding
+###----------------------------------------------------------------------------###
+def truncate(number, decimal_digits):
+    return np.trunc(number*10**decimal_digits)/(10**decimal_digits)
 ###----------------------------------------------------------------------------###
