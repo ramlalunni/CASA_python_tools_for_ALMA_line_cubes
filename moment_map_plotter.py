@@ -34,7 +34,12 @@ from modifier_functions import ChangeAxisColor, truncate
 # function to generate moment (0 or 8) maps (FITS)
 ###----------------------------------------------------------------------------###
 def make_moment_maps(cube, phasecenter, v_sys, v_exp, moment):
-    """docstring"""
+    """makes moment 0 or 8 maps of input line cube in FITS format
+       Inputs: 1. cube (str): FITS filename of input cube, Eg: 'IRAS_07454-7112_100.076392GHz_HC3N_a3.fits'
+               2. phasecenter (str): source cooridnate in the exact format and number of characters as follows: 'J2000 07h45m02.411040s -71d19m45.72840s'
+               3. v_sys (float): systemic velocity (km/s) of the source, Eg: -38.70
+               4. v_exp (float): expansion velocity (km/s) of the source, Eg: -13.0
+               5. moment (int): moment(0 or 8) to generate, Eg: 0"""
   
     # creating necessary directories (if not already present)
     dirs_to_create = ['fits_moment_%s_maps' %moment]
@@ -64,10 +69,15 @@ def make_moment_maps(cube, phasecenter, v_sys, v_exp, moment):
 ###----------------------------------------------------------------------------###
 
 
-# function to plot moment maps (PDF)
+# function to plot moment maps (PDF).
 ###----------------------------------------------------------------------------###
 def plot_moment_maps(cube, moment, sig_mom):
-    """docstring"""
+    """plots moment maps in PDF format
+       Inputs: 1. cube (str): FITS filename of input cube, Eg: 'IRAS_07454-7112_100.076392GHz_HC3N_a3.fits'
+               (NOTE: This is not the filename of the FITS moment map. but rather that of the original FITS image cube. However, function call will fail if 
+               FITS moment map is not present in the ./fits_moment_x_maps/ directory where 'x' is the moment number under consideration.)
+               2. moment (int): moment(0 or 8) to generate, Eg: 0
+               3. sig_mom (list of ints): sigma levels at which to plot contours, Eg: [3,5]"""
     
     # creating necessary directories (if not already present)
     dirs_to_create = ['pdf_moment_%s_maps' %moment]
