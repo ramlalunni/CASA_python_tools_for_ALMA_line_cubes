@@ -17,8 +17,14 @@ from astropy.io import fits
 def plot_az_av_rad_prof(cube, min_radius, max_radius, center, center_channel, binsize):
     """function to plot azimuthally averaged radial profile of a channel from the line cube.
        simplified adaptation of 'radialprofile.py' by Adam Ginsburg.
-       See <https://github.com/keflavich/image_tools/blob/793e93065afe2754a818da8b58f9b222a3acf59f/image_tools/radialprofile.py>"""
+       see <https://github.com/keflavich/image_tools/blob/793e93065afe2754a818da8b58f9b222a3acf59f/image_tools/radialprofile.py>"""
 
+    # creating necessary directories (if not already present)
+    dirs_to_create = ['ascii_az_av_radial_profiles/', 'pdf_az_av_radial_profiles/']
+    for dir in dirs_to_create:
+        if not os.path.exists('%s' %dir):
+            os.makedirs('%s' %dir)
+    
     # reading header and data from fits cube
     hdulist = fits.open('%s' %cube)
     data = hdulist[0].data
