@@ -52,4 +52,4 @@ This is a simplified and slightly modified version of the [*radialprofile.py*](h
 
 ## Licensing
 
-All scripts provided here are licensed under the **GNU General Public License v3.0**, except where code is explicitely mentioned to be adapted/taken from other sources, in which case the respective source licenses continue to apply. The GNU General Public License is free and copyleft. THE PROGRAMS ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+All scripts provided here are licensed under the [**GNU General Public License v3.0**](https://www.gnu.org/licenses/gpl-3.0.en.html), except where code is explicitely mentioned to be adapted/taken from other sources, in which case the respective source licenses continue to apply. The GNU General Public License is free and copyleft. THE PROGRAMS ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
