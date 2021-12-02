@@ -3,7 +3,7 @@
 ########################################################################
 # Simplified adpatation of 'radialprofile.py' by Adam Ginsburg.
 # See <https://github.com/keflavich/image_tools/blob/793e93065afe2754a818da8b58f9b222a3acf59f/image_tools/radialprofile.py>"""
-# License(s) of original (see above) apply.
+# License(s) of the original (see above) script apply.
 
 # contact: ramlal.unnikrishnan@chalmers.se
 ########################################################################
