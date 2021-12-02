@@ -1,0 +1,73 @@
+\documentclass{article}
+\usepackage[a4paper, total={9in, 10in}]{geometry}
+
+\usepackage[T1]{fontenc}
+\usepackage{pythontex}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{nopageno}
+
+\extrafloats{1000}
+
+\begin{document}
+
+\begin{pycode}
+
+import os
+import re
+import numpy as np
+import pandas as pd
+
+directory = "."
+extension = ".fits"
+files = [file[:-5] for file in os.listdir(directory) if
+file.lower().endswith(extension)]
+
+freqs = []
+for i in range(len(files)):
+    freqs.append(float(re.findall(r"[-+]?\d*\.\d+|\d+", files[i][16:-3])[0]))
+
+df = pd.DataFrame()
+df['files'] = files
+df['freqs'] = freqs
+
+df.sort_values(by='freqs', inplace=True, ignore_index=True)
+
+lines = df['files'].to_list()
+source = 'IRAS_07454-7112'
+np.savetxt('%s_selected_lines.txt' %source, lines, fmt='%s')
+
+for line in lines:
+   
+   print(r"\begin{figure}[!ht]")
+   print(r"\centering")
+
+   print(r"\begin{subfigure}[b]{0.4\textwidth}")
+   print(r"\centering")
+   print(r"\includegraphics[width=\textwidth]{./channel_maps/%s_channel_map.pdf}" %line)
+   print(r"\end{subfigure}")
+
+   print(r"\begin{subfigure}[b]{0.4\textwidth}")
+   print(r"\centering")
+   print(r"\includegraphics[width=\textwidth]{./pdf_spectra/%s_spectra.pdf}" %line)
+   print(r"\end{subfigure}")
+
+   print(r"\begin{subfigure}[b]{0.25\textwidth}")
+   print(r"\centering")
+   print(r"\includegraphics[width=\textwidth]{./pdf_moment_0_maps/%s_moment_0.pdf}" %line)
+   print(r"\end{subfigure}")
+
+   print(r"\begin{subfigure}[b]{0.25\textwidth}")
+   print(r"\centering")
+   print(r"\includegraphics[width=\textwidth]{./pdf_az_av_radial_profiles/%s_az_av_rad_profile.pdf}" %line)
+   print(r"\end{subfigure}")
+
+   print(r"\begin{subfigure}[b]{0.25\textwidth}")
+   print(r"\centering")
+   print(r"\includegraphics[width=\textwidth]{./pdf_moment_8_maps/%s_moment_8.pdf}" %line)
+   print(r"\end{subfigure}")
+
+   print(r"\end{figure}")
+\end{pycode}
+
+\end{document}
