@@ -24,7 +24,7 @@ CASA documentation is available [here](https://casadocs.readthedocs.io/en/stable
 
 ## 1. Extract and Plot Spectrum
 
-Uses CASA.specflux() to extract and write out flux densities from two circular apertures of user specified radii and also the central pixel of the image, and plots these using matplotlib.pyplot.step(), with the circular apertures and central pixel intensities in two separate y-axes, and a shared x-axis of velocity. The origins of the twin y-axes are forced to align.
+Uses [CASA.specflux()](https://casadocs.readthedocs.io/en/stable/api/tt/casatasks.analysis.specflux.html?highlight=specflux) to extract and write out flux densities from two circular apertures of user specified radii and also the central pixel of the image, and plots these using [matplotlib.pyplot.step()](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.step.html), with the circular apertures and central pixel intensities in two separate y-axes, and a shared x-axis of velocity. The origins of the twin y-axes are forced to align.
 
 <img width="814" alt="Screenshot 2021-12-02 at 17 18 13" src="https://user-images.githubusercontent.com/87668393/144460708-11fca880-8f66-45a8-b833-79ff9328fabc.png">
 
@@ -36,7 +36,7 @@ Plots 5x5 tiled channel maps (**NOTE**: *cube should have atleast 12 channels on
 
 ## 3. Generate and Plot Moment Maps
 
-Generates moment 0 (integrated value of the spectrum) and moment 8 (maximum value of the spectrum) maps (FITS) using CASA.immoments() and plots them in python. The RA and DEC axes ticklabels are printed as hms-dms as in the standard CASA.viewer() instance. Astropy.coordinates.SkyCoord() is used for this purpose, and must be installed. Two contour levels (user specified) are overplotted on the moment maps.
+Generates [moment 0](https://casadocs.readthedocs.io/en/stable/api/tt/casatasks.analysis.immoments.html?highlight=immoments) (integrated value of the spectrum) and [moment 8](https://casadocs.readthedocs.io/en/stable/api/tt/casatasks.analysis.immoments.html?highlight=immoments) (maximum value of the spectrum) maps (FITS) using CASA.immoments() and plots them in python. The RA and DEC axes ticklabels are printed as hms-dms as in the standard [CASA.imview()](https://casadocs.readthedocs.io/en/stable/api/tt/casaviewer.imview.html?highlight=imview) instance. Astropy.coordinates.SkyCoord() is used for this purpose, and must be installed. Two contour levels (user specified) are overplotted on the moment maps.
 
 Moment 0             |  Moment 8
 :-------------------------:|:-------------------------:
