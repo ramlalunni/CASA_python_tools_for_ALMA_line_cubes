@@ -9,7 +9,7 @@
 
 **INPUT**: ALMA spectral line image FITS cube, velocity corrected and not having Stokes axes, created using CASA.
 
-Use **dropstokes=True** in [CASA.exportfits()](https://casadocs.readthedocs.io/en/stable/api/tt/casatasks.data.exportfits.html#exportfits) to remove redundant Stokes axes, if any. Use **restfreq='xx.xxxGHz'** in [CASA.tclean()](https://casadocs.readthedocs.io/en/stable/api/tt/casatasks.imaging.tclean.html?highlight=tclean#tclean) or [CASA.imreframe()](https://casadocs.readthedocs.io/en/stable/api/tt/casatasks.analysis.imreframe.html?highlight=imreframe#imreframe) to assign correct channel velocities, and use **velocity=True** [CASA.exportfits()](https://casadocs.readthedocs.io/en/stable/api/tt/casatasks.data.exportfits.html#exportfits) to ensure that the spectral axis of the input cube is in velocity units rather than frequency.
+Use **dropstokes=True** in [CASA.exportfits()](https://casadocs.readthedocs.io/en/stable/api/tt/casatasks.data.exportfits.html#exportfits) to remove redundant Stokes axes, if any. Use **restfreq='xx.xxxGHz'** in [CASA.tclean()](https://casadocs.readthedocs.io/en/stable/api/tt/casatasks.imaging.tclean.html?highlight=tclean#tclean) or [CASA.imreframe()](https://casadocs.readthedocs.io/en/stable/api/tt/casatasks.analysis.imreframe.html?highlight=imreframe#imreframe) to assign correct channel velocities, and use **velocity=True** in [CASA.exportfits()](https://casadocs.readthedocs.io/en/stable/api/tt/casatasks.data.exportfits.html#exportfits) to ensure that the spectral axis of the input cube is in velocity units rather than frequency.
 
 Current functionality includes the following:
 
