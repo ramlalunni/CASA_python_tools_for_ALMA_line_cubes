@@ -1,4 +1,4 @@
-# get_az_av_radial_profile.py
+# radial_profile_plotter.py
 
 ########################################################################
 # Simplified adpatation of 'radialprofile.py' by Adam Ginsburg.
