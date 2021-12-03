@@ -1,4 +1,4 @@
-# get_spectra.py
+# spectra_plotter.py
 
 ########################################################################
 # Copyright (C) 2021  Ramlal Unnikrishnan
