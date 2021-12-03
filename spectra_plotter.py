@@ -88,6 +88,6 @@ def get_spectrum_from_cube(cube, phasecenter, mid_region, large_region, v_sys):
     plt.close()
 
     # extracting channel velocities
-    vels  = spec_large[:,1] # velocity of each channel (km/s)
+    vels  = spec_cp[:,1] # velocity of each channel (km/s)
     return vels
 ###----------------------------------------------------------------------------###
