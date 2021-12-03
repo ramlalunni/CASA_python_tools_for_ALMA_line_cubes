@@ -14,7 +14,7 @@ from astropy.io import fits
 
 # function to generate azimuthally averaged radial profiles (ASCII and PDF)
 ###----------------------------------------------------------------------------###
-def plot_az_av_rad_prof(cube, min_radius, max_radius, center, center_channel, binsize):
+def plot_az_av_rad_prof(cube, min_radius, max_radius, center, binsize, v_sys=v_sys):
     """function to plot azimuthally averaged radial profile of a channel from the line cube.
        simplified adaptation of 'radialprofile.py' by Adam Ginsburg.
        see <https://github.com/keflavich/image_tools/blob/793e93065afe2754a818da8b58f9b222a3acf59f/image_tools/radialprofile.py>"""
@@ -29,6 +29,24 @@ def plot_az_av_rad_prof(cube, min_radius, max_radius, center, center_channel, bi
     hdulist = fits.open('%s' %cube)
     data = hdulist[0].data
     header = fits.getheader('%s' %cube)
+
+    # velocity references
+    NAXIS3 = header['NAXIS3']
+    CTYPE3 = header['CTYPE3']
+    CRVAL3 = header['CRVAL3']
+    CDELT3 = header['CDELT3']
+    CRPIX3 = header['CRPIX3']
+    
+    # finding channel velocities
+    if CTYPE3 == 'VRAD':
+        vels = np.zeros(NAXIS3)
+        for i in range(NAXIS3):
+            vels[i] = CRVAL3 + CDELT3*(i - CRPIX3 + 1)
+    else:
+        raise TypeError('AXIS3 is not in velocity units')
+
+    # finding central channel of line cube (channel at systemic velocity)
+    center_channel = np.argmin(np.abs(vels-v_sys))
 
     # defining pixel coordinates of image center, if not already input to function
     CRPIX1 = header['CRPIX1']
