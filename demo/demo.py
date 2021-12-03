@@ -56,12 +56,12 @@ max_radius = 15 # arcseconds
 binsize = 1 # pixels
 
 # choosing functions to run
-get_presets    = False
-get_spectrum   = False
-make_moments   = False
-plot_moments   = False
-plot_chan_maps = False
-plot_rad_prof  = False
+get_presets    = True
+get_spectrum   = True
+make_moments   = True
+plot_moments   = True
+plot_chan_maps = True
+plot_rad_prof  = True
 combine_plots  = True
 
 ###~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~###
