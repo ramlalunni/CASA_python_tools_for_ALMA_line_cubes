@@ -6,7 +6,7 @@
 **PREREQUISITES**: 
 - NRAO CASA (tested only on versions 5.6.1-8 and later, but expected to work on previous versions also).
 - Numpy, Matplotlib, Astropy and Pandas installed into the PYTHONENV used by CASA.
-- Optional: PDFLaTeX and PythonTeX (only for running *combine_plots_in_latex.py* to generate a single pdf containing all the plots, one page per line)
+- Optional: [PDFLaTeX](https://www.latex-project.org/get/) and [PythonTeX](https://ctan.org/pkg/pythontex?lang=en) (only for running *combine_plots_in_latex.py* to generate a single pdf containing all the plots, one page per line)
 
 **INPUT**: ALMA spectral line image FITS cube, velocity corrected and not having Stokes axes, created using CASA.
 
