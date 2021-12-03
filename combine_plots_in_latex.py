@@ -32,9 +32,9 @@ def combine_plots_in_latex(source):
        Inputs: 1. source (str): name of the source corresponding to the input line cubes, Eg: 'IRAS_07454-7112'"""
 
     # removing files from previous compilation, if any
-    os.system('rm -rf pythontex-files-combine_plots/ combine_plots.aux combine_plots.pytxcode combine_plots.log')
+    os.system('rm -rf pythontex-files-combine_plots/ combine_plots.aux combine_plots.pytxcode combine_plots.log combine_plots.pdf %s_line_plots.pdf' %source)
 
-    # latex runs
+    # LaTeX runs
     pdf_latex_run_1 = subprocess.run('pdflatex combine_plots.tex', shell=True, check=True, capture_output=False)
     if pdf_latex_run_1.returncode == 0:
         python_tex_run = subprocess.run('pythontex combine_plots.tex', shell=True, check=True, capture_output=False)
@@ -44,5 +44,6 @@ def combine_plots_in_latex(source):
         os.system('mv combine_plots.pdf %s_line_plots.pdf' %source)
         print('LaTeX compilation and run successful. All plots are saved to %s_line_plots.pdf' %source)
 
+    # removing additional files created by LaTeX runs
     os.system('rm -rf pythontex-files-combine_plots/ combine_plots.aux combine_plots.pytxcode combine_plots.log')
 ###----------------------------------------------------------------------------###
