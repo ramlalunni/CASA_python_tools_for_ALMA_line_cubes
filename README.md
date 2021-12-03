@@ -64,6 +64,12 @@ The script which would call these functions has to be located in the same direct
 - ./ascii_az_av_radial_profiles/
 - ./pdf_az_av_radial_profiles/
 
+## Combining all plots to single PDF file
+
+A script *combine_plots_in_latex.py* is provided which runs the *combine_plots.tex* LaTeX script to combine the generated plots for all line cubes from a single source to a single PDF file. All five (channel map, spectra, moment 0 map, moment 8 map, and radial profile) figures from each line cube is arranged on a single page as shown below, and such pages for different lines are compiled into a multi-page pdf file.
+
+<img width="1339" alt="Screenshot 2021-12-03 at 17 01 02" src="https://user-images.githubusercontent.com/87668393/144633463-cda858a0-b4ce-4bcf-8c23-3abde87728c3.png">
+
 ## Licensing
 
 All scripts provided here are licensed under the [**GNU General Public License v3.0**](https://www.gnu.org/licenses/gpl-3.0.en.html), except where code is explicitely mentioned to be adapted/taken from other sources, in which case the respective source licenses continue to apply. The GNU General Public License is free and copyleft. THE PROGRAMS ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
