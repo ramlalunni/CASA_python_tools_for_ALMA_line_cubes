@@ -19,6 +19,8 @@
 # contact: ramlal.unnikrishnan@chalmers.se
 ########################################################################
 
+# demonstration of how to call functions provided in CASA_python_tools_for_ALMA_cubes/
+
 import numpy as np
 import matplotlib
 import matplotlib.pyplot as plt
@@ -30,6 +32,13 @@ from astropy.coordinates import SkyCoord
 import os
 import subprocess
 import sys
+
+sys.path.append(../)
+from modifier_functions import ChangeAxisColor, align_yaxis_origins, truncate
+from spectra_plotter import get_spectrum_from_cube
+from moment_map_plotter import make_moment_maps, plot_moment_maps
+from channel_map_plotter import plot_channel_maps
+from radial_profile_plotter import plot_az_av_rad_prof
 
 # listing all FITS files in $PWD
 directory = "."
@@ -56,7 +65,6 @@ max_radius = 15 # arcseconds
 binsize = 1 # pixels
 
 # choosing functions to run
-get_presets    = True
 get_spectrum   = True
 make_moments   = True
 plot_moments   = True
