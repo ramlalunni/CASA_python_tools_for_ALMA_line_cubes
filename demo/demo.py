@@ -51,10 +51,19 @@ file.lower().endswith(extension)]
 # source name
 source = 'IRAS_07454-7112'
 
-# input parameters for function moment_map_plotter
+# input parameters for function get_spectrum_from_cube
+phasecenter = 'J2000 07h45m02.411040s -71d19m45.72840s' # RA and DEC of source in J2000 epoch
+mid_region = 9 # arcsec
+large_region = 25 # arcsec
+v_sys = -38.70 # km/s
+
+# input parameters for function make_moment_maps
+v_exp = 13.0 #km/s
+
+# input parameters for function plot_moment_maps
 sig_mom = [3,5] # sigma value at which to draw contours in moment maps
 
-# input parameters for function channel_map_plotter
+# input parameters for function plot_channel_maps
 imsize = 25 # arcseconds
 tick_size = 10 # arcseconds
 sig = 5 # sigma value at which to draw contours in channel maps
@@ -80,18 +89,14 @@ for cube in files:
 
     print('Processing %s...\n' %cube)
 
-    if get_presets:
-        # function call to define source specific parameters
-        v_sys, v_exp, phasecenter, mid_region = get_source_presets(source=source)
-
     if get_spectrum:
         # function call to extract and plot spectral line from image cubes
-        vels = get_spectrum_from_cube(cube=cube, phasecenter=phasecenter, mid_region=mid_region, v_sys=v_sys)
+        vels = get_spectrum_from_cube(cube=cube, phasecenter=phasecenter, mid_region=mid_region, large_region=large_region, v_sys=v_sys)
 
     if make_moments:
         # function call to produce FITS moment maps
-        make_moment_maps(cube=cube, vels=vels, v_sys=v_sys, v_exp=v_exp, moment=0)
-        make_moment_maps(cube=cube, vels=vels, v_sys=v_sys, v_exp=v_exp, moment=8)
+        make_moment_maps(cube=cube, phasecenter=phasecenter, v_sys=v_sys, v_exp=v_exp, moment=0)
+        make_moment_maps(cube=cube, phasecenter=phasecenter, v_sys=v_sys, v_exp=v_exp, moment=8)
 
     if plot_moments:
         # function calls to plot moment maps in PDF
@@ -100,14 +105,14 @@ for cube in files:
 
     if plot_chan_maps:
         # function call to plot channel maps
-        center_channel, center = plot_channel_maps(cube=cube, vels=vels, imsize=imsize, tick_size=tick_size, v_sys=v_sys, sig=sig)
+        center_channel, center = plot_channel_maps(cube=cube, imsize=imsize, tick_size=tick_size, v_sys=v_sys, sig=sig)
 
     if plot_rad_prof:
         # function call to generate azimuthally averaged radial profiles
-        radii, azimuthal_profile = plot_az_av_rad_prof(cube=cube, min_radius=min_radius, max_radius=max_radius, center=center, center_channel=center_channel, binsize=binsize)
+        radii, azimuthal_profile = plot_az_av_rad_prof(cube=cube, min_radius=min_radius, max_radius=max_radius, center=None, binsize=binsize, v_sys=v_sys)
 
 if combine_plots:
-    # function call to combine all plots to single pdf file
+    # function call to combine all plots to single pdf file. Requires pythontex to be installed and visible to CASA
     combine_plots_in_latex(source=source)
 ###!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!###
 
